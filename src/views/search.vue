@@ -28,7 +28,6 @@
 
 <script>
 import file from '../../database/file.json'
-import axios from 'axios'
 export default {
   name: 'HomeView',
   data(){
@@ -51,12 +50,7 @@ export default {
     pushData(index){
       var list = this.list[index]
       var url = `https://docs.google.com/forms/d/e/1FAIpQLSeWUfET3LR6g_7puW79VmhZf4PRoCEtmcVXRFgtyNNbu_iFIg/viewform?usp=pp_url&entry.456931737=${list.nome}&entry.96761479=${list.regiao}&entry.773359901=${list.number}&entry.1172068566=${list.igreja}&entry.2125757515=${list.cidade}&entry.292054885=${list.convite}&entry.930101984=Mais+vezes&entry.400014742=${list.faixa}&entry.725629179=${list.sexo}`
-      axios.post(url)
-      .then(res => {
-        console.log(res)
-      }).catch(error => {
-        console.log(error)
-      })
+      window.open(url,'_blank')
     },
     search(){
       if(this.searchInput !== ''){
