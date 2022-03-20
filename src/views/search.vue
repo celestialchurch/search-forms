@@ -1,29 +1,31 @@
 <template>
-  <div id="primary">
-    <div class="search">
-      <input type="text" placeholder="Pesquisar por nome" @keydown="search()" @click="searchUp()" v-model="searchInput">
-      <span class="exit" @click="searchExit">
-        <i class="fas fa-times"></i>
-      </span>
-      <ul id="peoples">
-        <li 
-        v-for="(element,index) in newDatabase" :key="index" @click="pushData(index)">
-          {{element.nome}} | {{element.number}}
-        </li>
-      </ul>
-    </div>
-    <br>
-    <div class="form">
-      <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeWUfET3LR6g_7puW79VmhZf4PRoCEtmcVXRFgtyNNbu_iFIg/viewform?embedded=true" 
-      width="640" 
-      height="2523" 
-      id="frame"
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">Carregando…</iframe>
+  <div id="main">
+    <div id="primary">
+      <div class="search">
+        <input type="text" placeholder="Pesquisar por nome" @keydown="search()" @click="searchUp()" v-model="searchInput">
+        <span class="exit" @click="searchExit">
+          <i class="fas fa-times"></i>
+        </span>
+        <ul id="peoples">
+          <li 
+          v-for="(element,index) in newDatabase" :key="index" @click="pushData(index)">
+            {{element.nome}} | {{element.number}}
+          </li>
+        </ul>
+      </div>
+      <br>
+      <div class="form">
+        <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeWUfET3LR6g_7puW79VmhZf4PRoCEtmcVXRFgtyNNbu_iFIg/viewform?embedded=true" 
+        height="2523" 
+        id="frame"
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">Carregando…</iframe>
+      </div>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -79,6 +81,9 @@ export default {
   font-size: 15px;
   color: white;
   cursor: pointer;
+}
+#main{
+  display: flex;
 }
 #primary{
   display: flex;
@@ -138,5 +143,12 @@ export default {
 }
 #primary .search ul li:hover{
   background-color: rgb(235, 235, 235);
+}
+
+.form{
+  display: flex;
+}
+#frame{
+  width: 640px;
 }
 </style>
