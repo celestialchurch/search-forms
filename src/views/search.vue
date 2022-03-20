@@ -114,7 +114,7 @@ export default {
 }
 #primary .search ul{
   position: absolute;
-  height: 200px;
+  max-height: 200px;
   overflow: auto;
   background-color: white;
   width: 97%;
